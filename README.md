@@ -48,7 +48,48 @@ skills/
     SKILL.md
   agent-evaluation/
     SKILL.md
+templates/
+  skill-template/
+    SKILL.md
 ```
+
+## Naming Convention
+
+Use these rules for new skills:
+
+- use lowercase letters, digits, and hyphens only
+- keep names short and action- or domain-oriented
+- prefer names that describe the reusable capability, not a temporary project
+- avoid vague names like `general-helper` or `notes-skill`
+
+Good examples:
+
+- `agent-evaluation`
+- `agent-harness-designer`
+- `pdf-contract-review`
+- `repo-architecture-analysis`
+
+Bad examples:
+
+- `misc`
+- `agent-stuff`
+- `my-notes`
+- `new-skill-v2-final`
+
+## Skill Template
+
+Start new skills from:
+
+- `templates/skill-template/SKILL.md`
+
+The template is intentionally small. A good first version of a skill should usually contain:
+
+- a precise trigger description in frontmatter
+- a clear task boundary
+- a reusable workflow
+- a compact output structure
+
+Add `references/`, `scripts/`, or `assets/` only when the skill clearly needs them.
 
 ## Design Principles
 
@@ -72,3 +113,14 @@ Poor candidates are:
 - one-off notes
 - large undifferentiated documentation dumps
 - content without a clear usage trigger
+
+## Adding a New Skill
+
+Recommended workflow:
+
+1. Copy `templates/skill-template/` to `skills/<new-skill-name>/`
+2. Replace the placeholder `name` and `description`
+3. Tighten the "When To Use" boundary
+4. Keep only reusable workflow and decision rules
+5. Move bulky detail into `references/` if the body starts to bloat
+6. Update this README with the new skill and its category
